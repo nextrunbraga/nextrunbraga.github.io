@@ -69,7 +69,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=5.1.0">
+  <link rel="stylesheet" href="assets/css/styles.css?v=3.3.0">
 </head>
 <body class="bg-[#0A0B0E] text-slate-100 antialiased selection:bg-white selection:text-black">
 
@@ -89,18 +89,18 @@
 
   <!-- Navigation -->
   <nav class="sticky top-0 z-40 bg-[#0A0B0E]/85 backdrop-blur-md border-b border-white/5 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center font-black text-xl shadow-[0_0_20px_rgba(255,255,255,0.25)] group-hover:scale-105 transition-transform">
+      <a href="#" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white text-black flex items-center justify-center font-black text-base sm:text-xl shadow-[0_0_20px_rgba(255,255,255,0.25)] group-hover:scale-105 transition-transform shrink-0">
           <i class="fa-solid fa-bolt-lightning"></i>
         </div>
         <div>
-          <span class="font-display font-black text-2xl tracking-tighter text-white uppercase block leading-none">
+          <span class="font-display font-black text-lg sm:text-2xl tracking-tighter text-white uppercase block leading-none">
             NEXT<span class="text-neutral-400">RUN</span>
           </span>
-          <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-400 block mt-0.5">
+          <span class="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-slate-400 block mt-0.5">
             CLUB • BRAGA
           </span>
         </div>
@@ -118,34 +118,61 @@
       </div>
 
       <!-- Right Header Actions (Direct Flags + Social/VIP + Mobile Menu) -->
-      <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         
-        <!-- Language Selector Bar (Direct 1-Click) -->
-        <div id="headerLangBar" class="flex items-center gap-1 p-1 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm" role="group" aria-label="Seletor de Idioma">
-          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-extrabold transition-all bg-white text-black border border-white opacity-100 shadow-sm" data-lang="en" title="English" aria-pressed="true">
-            <span class="text-sm leading-none">🇬🇧</span>
-            <span class="text-[11px] tracking-wider uppercase">EN</span>
+        <!-- Language Selector Dropdown / Popover -->
+        <div id="langDropdownContainer" class="relative">
+          <button id="langTriggerBtn" type="button" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white text-xs font-extrabold transition-all cursor-pointer shrink-0" aria-label="Selecionar Idioma">
+            <i class="fa-solid fa-globe text-xs text-neutral-300"></i>
+            <span id="langTriggerFlag">🇬🇧</span>
+            <span id="langTriggerCode">EN</span>
+            <i id="langTriggerChevron" class="fa-solid fa-chevron-down text-[10px] text-neutral-400 transition-transform duration-200"></i>
           </button>
-          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="pt-PT" title="Português (Portugal)" aria-pressed="false">
-            <span class="text-sm leading-none">🇵🇹</span>
-            <span class="text-[11px] tracking-wider uppercase">PT</span>
-          </button>
-          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="pt-BR" title="Português (Brasil)" aria-pressed="false">
-            <span class="text-sm leading-none">🇧🇷</span>
-            <span class="text-[11px] tracking-wider uppercase">BR</span>
-          </button>
-          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="es" title="Español" aria-pressed="false">
-            <span class="text-sm leading-none">🇪🇸</span>
-            <span class="text-[11px] tracking-wider uppercase">ES</span>
-          </button>
-          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="fr" title="Français" aria-pressed="false">
-            <span class="text-sm leading-none">🇫🇷</span>
-            <span class="text-[11px] tracking-wider uppercase">FR</span>
-          </button>
-          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="it" title="Italiano" aria-pressed="false">
-            <span class="text-sm leading-none">🇮🇹</span>
-            <span class="text-[11px] tracking-wider uppercase">IT</span>
-          </button>
+
+          <div id="langDropdownMenu" class="hidden absolute right-0 top-full mt-2 w-56 rounded-2xl bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.9)] p-1.5 z-50 flex-col gap-1">
+            <button type="button" class="lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-white text-black font-extrabold" data-lang="en">
+              <span class="flex items-center gap-2">
+                <span class="text-base leading-none">🇬🇧</span>
+                <span class="font-bold">English</span>
+              </span>
+              <span class="text-[11px] uppercase tracking-wider font-extrabold opacity-75">EN</span>
+            </button>
+            <button type="button" class="lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-transparent text-neutral-300 hover:bg-white/10 hover:text-white" data-lang="pt-PT">
+              <span class="flex items-center gap-2">
+                <span class="text-base leading-none">🇵🇹</span>
+                <span class="font-bold">Português (PT)</span>
+              </span>
+              <span class="text-[11px] uppercase tracking-wider font-extrabold opacity-75">PT-PT</span>
+            </button>
+            <button type="button" class="lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-transparent text-neutral-300 hover:bg-white/10 hover:text-white" data-lang="pt-BR">
+              <span class="flex items-center gap-2">
+                <span class="text-base leading-none">🇧🇷</span>
+                <span class="font-bold">Português (BR)</span>
+              </span>
+              <span class="text-[11px] uppercase tracking-wider font-extrabold opacity-75">PT-BR</span>
+            </button>
+            <button type="button" class="lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-transparent text-neutral-300 hover:bg-white/10 hover:text-white" data-lang="es">
+              <span class="flex items-center gap-2">
+                <span class="text-base leading-none">🇪🇸</span>
+                <span class="font-bold">Español</span>
+              </span>
+              <span class="text-[11px] uppercase tracking-wider font-extrabold opacity-75">ES</span>
+            </button>
+            <button type="button" class="lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-transparent text-neutral-300 hover:bg-white/10 hover:text-white" data-lang="fr">
+              <span class="flex items-center gap-2">
+                <span class="text-base leading-none">🇫🇷</span>
+                <span class="font-bold">Français</span>
+              </span>
+              <span class="text-[11px] uppercase tracking-wider font-extrabold opacity-75">FR</span>
+            </button>
+            <button type="button" class="lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-transparent text-neutral-300 hover:bg-white/10 hover:text-white" data-lang="it">
+              <span class="flex items-center gap-2">
+                <span class="text-base leading-none">🇮🇹</span>
+                <span class="font-bold">Italiano</span>
+              </span>
+              <span class="text-[11px] uppercase tracking-wider font-extrabold opacity-75">IT</span>
+            </button>
+          </div>
         </div>
 
         <!-- Desktop Action Buttons -->
@@ -160,8 +187,8 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-200 hover:text-white transition-colors shrink-0" aria-label="Abrir menu">
-          <i class="fa-solid fa-bars text-lg sm:text-xl"></i>
+        <button id="mobileMenuBtn" class="lg:hidden w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-200 hover:text-white transition-colors shrink-0" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars text-base sm:text-xl"></i>
         </button>
 
       </div>
@@ -189,28 +216,28 @@
         <i class="fa-solid fa-globe text-white"></i>
         <span>Idioma / Language</span>
       </div>
-      <div class="grid grid-cols-6 gap-1.5 sm:gap-2">
-        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white text-black font-black border border-white" data-lang="en" aria-pressed="true">
+      <div class="grid grid-cols-3 gap-2">
+        <button type="button" class="mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white text-black font-black border border-white" data-lang="en" aria-pressed="true">
           <span class="text-base">🇬🇧</span>
           <span>EN</span>
         </button>
-        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="pt-PT" aria-pressed="false">
+        <button type="button" class="mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="pt-PT" aria-pressed="false">
           <span class="text-base">🇵🇹</span>
-          <span>PT</span>
+          <span>PT-PT</span>
         </button>
-        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="pt-BR" aria-pressed="false">
+        <button type="button" class="mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="pt-BR" aria-pressed="false">
           <span class="text-base">🇧🇷</span>
-          <span>BR</span>
+          <span>PT-BR</span>
         </button>
-        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="es" aria-pressed="false">
+        <button type="button" class="mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="es" aria-pressed="false">
           <span class="text-base">🇪🇸</span>
           <span>ES</span>
         </button>
-        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="fr" aria-pressed="false">
+        <button type="button" class="mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="fr" aria-pressed="false">
           <span class="text-base">🇫🇷</span>
           <span>FR</span>
         </button>
-        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="it" aria-pressed="false">
+        <button type="button" class="mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="it" aria-pressed="false">
           <span class="text-base">🇮🇹</span>
           <span>IT</span>
         </button>
@@ -1365,7 +1392,7 @@
   </div>
 
   <!-- Scripts: i18n Dictionary first, then App logic -->
-  <script src="assets/js/i18n.js?v=5.1.0"></script>
-  <script src="assets/js/app.js?v=5.1.0"></script>
+  <script src="assets/js/i18n.js?v=3.3.0"></script>
+  <script src="assets/js/app.js?v=3.3.0"></script>
 </body>
 </html>

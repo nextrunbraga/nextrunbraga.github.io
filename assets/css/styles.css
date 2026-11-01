@@ -16,11 +16,16 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--color-dark);
   color: #F8FAFC;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -163,7 +168,20 @@ h1, h2, h3, h4, .font-display {
   animation: pulseGlow 2s infinite ease-in-out;
 }
 
-/* Language Selector Compact Bar */
+/* Language Selector Popover & Button */
+#langDropdownContainer {
+  position: relative;
+}
+
+#langDropdownMenu {
+  transform-origin: top right;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+#langDropdownMenu:not(.hidden) {
+  display: flex;
+}
+
 .lang-btn {
   user-select: none;
   cursor: pointer;

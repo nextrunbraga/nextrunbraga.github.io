@@ -6,7 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // 1. SISTEMA DE INTERNACIONALIZAÇÃO (i18n)
   // ==========================================
-  const supportedLangs = ['pt-PT', 'pt-BR', 'es', 'en', 'fr', 'it'];
+  const supportedLangs = ['en', 'pt-PT', 'pt-BR', 'es', 'fr', 'it'];
+  const langMetaMap = {
+    'en':    { flag: '🇬🇧', code: 'EN' },
+    'pt-PT': { flag: '🇵🇹', code: 'PT' },
+    'pt-BR': { flag: '🇧🇷', code: 'BR' },
+    'es':    { flag: '🇪🇸', code: 'ES' },
+    'fr':    { flag: '🇫🇷', code: 'FR' },
+    'it':    { flag: '🇮🇹', code: 'IT' }
+  };
   const STORAGE_KEY = 'next_run_lang_pref_v3';
 
   // Detecção de idioma com hierarquia estrita:
@@ -30,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Default Fixo (Sempre Português de Portugal inicialmente — NÃO usa navigator.language)
-    return 'pt-PT';
+    return 'en';
   };
 
   let currentLang = detectLanguage();
@@ -42,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Função central para aplicar idioma
   window.setLanguage = (lang, saveToStorage = true) => {
-    if (!supportedLangs.includes(lang)) lang = 'pt-PT';
+    if (!supportedLangs.includes(lang)) lang = 'en';
     currentLang = lang;
 
     if (saveToStorage) {
@@ -109,32 +117,94 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const updateLanguageSelectorsUI = (lang) => {
-    // 1. Barra horizontal no cabeçalho superior (.lang-btn)
+    // 1. Atualizar Botão Compacto do Header (#langTriggerFlag e #langTriggerCode)
+    const triggerFlag = document.getElementById('langTriggerFlag');
+    const triggerCode = document.getElementById('langTriggerCode');
+    const meta = langMetaMap[lang] || langMetaMap['en'];
+    if (triggerFlag && meta) triggerFlag.textContent = meta.flag;
+    if (triggerCode && meta) triggerCode.textContent = meta.code;
+
+    // 2. Botões do Dropdown Flutuante (#langDropdownMenu .lang-btn)
     document.querySelectorAll('.lang-btn').forEach(btn => {
       const btnLang = btn.getAttribute('data-lang');
       if (btnLang === lang) {
-        btn.className = 'lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-extrabold transition-all bg-white text-black border border-white opacity-100 shadow-sm';
+        btn.className = 'lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-white text-black font-extrabold shadow-sm';
         btn.setAttribute('aria-pressed', 'true');
       } else {
-        btn.className = 'lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5';
+        btn.className = 'lang-btn w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-xs transition-all bg-transparent text-neutral-300 hover:bg-white/10 hover:text-white font-medium';
         btn.setAttribute('aria-pressed', 'false');
       }
     });
 
-    // 2. Botões da grade do menu mobile (.mobile-lang-btn)
+    // 3. Botões da grade do menu mobile (.mobile-lang-btn)
     document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
       const btnLang = btn.getAttribute('data-lang');
       if (btnLang === lang) {
-        btn.className = 'mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white text-black font-black border border-white';
+        btn.className = 'mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white text-black font-black border border-white';
         btn.setAttribute('aria-pressed', 'true');
       } else {
-        btn.className = 'mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10';
+        btn.className = 'mobile-lang-btn py-2.5 px-2 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10 font-medium';
         btn.setAttribute('aria-pressed', 'false');
       }
     });
   };
 
-  // Setup dos listeners de troca de idioma (1 clique direto)
+  // Dropdown de Idiomas (Header)
+  const langDropdownContainer = document.getElementById('langDropdownContainer');
+  const langTriggerBtn = document.getElementById('langTriggerBtn');
+  const langDropdownMenu = document.getElementById('langDropdownMenu');
+  const langTriggerChevron = document.getElementById('langTriggerChevron');
+
+  const closeLangDropdown = () => {
+    if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
+      langDropdownMenu.classList.add('hidden');
+      langDropdownMenu.classList.remove('flex');
+      if (langTriggerBtn) langTriggerBtn.setAttribute('aria-expanded', 'false');
+      if (langTriggerChevron) langTriggerChevron.classList.remove('rotate-180');
+    }
+  };
+
+  const openLangDropdown = () => {
+    if (langDropdownMenu) {
+      langDropdownMenu.classList.remove('hidden');
+      langDropdownMenu.classList.add('flex');
+      if (langTriggerBtn) langTriggerBtn.setAttribute('aria-expanded', 'true');
+      if (langTriggerChevron) langTriggerChevron.classList.add('rotate-180');
+    }
+  };
+
+  const toggleLangDropdown = () => {
+    if (langDropdownMenu) {
+      if (langDropdownMenu.classList.contains('hidden')) {
+        openLangDropdown();
+      } else {
+        closeLangDropdown();
+      }
+    }
+  };
+
+  if (langTriggerBtn) {
+    langTriggerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleLangDropdown();
+    });
+  }
+
+  // Fechar dropdown ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (langDropdownContainer && !langDropdownContainer.contains(e.target)) {
+      closeLangDropdown();
+    }
+  });
+
+  // Fechar dropdown ao pressionar Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLangDropdown();
+    }
+  });
+
+  // Setup dos listeners de troca de idioma (1 clique)
   const setupLanguageSelectors = () => {
     document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -142,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selected = btn.getAttribute('data-lang');
         if (selected && supportedLangs.includes(selected)) {
           window.setLanguage(selected, true);
+          closeLangDropdown();
         }
       });
     });

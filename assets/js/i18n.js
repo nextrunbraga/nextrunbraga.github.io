@@ -1211,7 +1211,7 @@ const translations = {
     },
     "pacers": {
         "badge": "Hospitalité Active",
-        "title": "\"SALUT ! NOUS SOMMES LEVI & BRUNO... <br><span class=\"text-white font-bold\">JE PEUX T'AIDER ??</span>\"",
+        "title": "\"SALUT! NOUS SOMMES LEVI & BRUNO... <br><span class=\"text-white font-bold\">CAN I HELP YOU ??</span>\"",
         "desc": "Sur le dos de nos maillots officiels, tous nos pacers portent ce message. Ce n'est pas un hasard : notre priorité absolue est que <strong>personne ne se sente jamais intimidé</strong> en venant courir avec nous.",
         "items": {
             "i1Title": "Guides d'Allure & d'Itinéraire",
@@ -1556,7 +1556,7 @@ const translations = {
     },
     "pacers": {
         "badge": "Ospitalità Attiva",
-        "title": "\"CIAO! SIAMO LEVI & BRUNO... <br><span class=\"text-white font-bold\">POSSO AIUTARTI ??</span>\"",
+        "title": "\"CIAO! SIAMO LEVI & BRUNO... <br><span class=\"text-white font-bold\">CAN I HELP YOU ??</span>\"",
         "desc": "Sul retro delle nostre maglie ufficiali, tutti i pacer portano questo messaggio. Non è un caso: la nostra priorità assoluta è che <strong>nessuno si senta intimidito</strong> venendo ad allenarsi con noi.",
         "items": {
             "i1Title": "Guide di Passo & Percorso",
@@ -1809,4 +1809,5 @@ const languageConfig = {
 
 // Funções de acesso global ao dicionário
 window.i18nData = translations;
+window.NEXT_RUN_I18N = translations;
 window.languageConfig = languageConfig;
