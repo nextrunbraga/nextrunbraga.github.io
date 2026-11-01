@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Run Club Braga | Mais do que Apenas Correr</title>
+  
+  <!-- SEO & OpenGraph -->
+  <meta name="description" content="A Next Run é uma comunidade aberta e gratuita de corrida em Braga, Portugal. Não importa o teu ritmo, o importante é aparecer e fazer parte.">
+  <meta property="og:title" content="Next Run Club Braga | Mais do que Apenas Correr">
+  <meta property="og:description" content="Comunidade de corrida, amizade e saúde em Braga, Portugal. Descobre o prazer de correr em conjunto. 100% gratuito e aberto a todos os ritmos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nextrunbraga.github.io/">
+  <meta property="og:image" content="https://nextrunbraga.github.io/assets/img/pacers-running-street.jpg">
+  <link rel="canonical" href="https://nextrunbraga.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Next Run Club Braga | Mais do que Apenas Correr">
+  <meta name="twitter:description" content="A Next Run é uma comunidade aberta e gratuita de corrida em Braga, Portugal. Não importa o teu ritmo, o importante é aparecer e fazer parte.">
+  <meta name="twitter:image" content="https://nextrunbraga.github.io/assets/img/pacers-running-street.jpg">
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsClub",
+    "name": "Next Run Club Braga",
+    "description": "Comunidade de corrida, amizade e saúde em Braga, Portugal. Treinos abertos e 100% gratuitos para todos os ritmos.",
+    "url": "https://nextrunbraga.github.io/",
+    "image": "https://nextrunbraga.github.io/assets/img/pacers-running-street.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Braga",
+      "addressCountry": "PT"
+    },
+    "sport": "Running",
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFFFFF'><path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              volt: '#FFFFFF',
+              hover: '#E5E5E5',
+              dark: '#0A0B0E',
+              card: '#13161F',
+              border: 'rgba(255,255,255,0.08)'
+            }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=5.1.0">
+</head>
+<body class="bg-[#0A0B0E] text-slate-100 antialiased selection:bg-white selection:text-black">
+
+  <!-- Scroll Progress -->
+  <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-white z-50 transition-all duration-75" style="width: 0%;"></div>
+
+  <!-- Announcement Bar -->
+  <div class="bg-[#12141A] border-b border-white/5 py-2 px-4 text-center text-xs tracking-wide">
+    <span class="inline-flex items-center gap-2 flex-wrap justify-center">
+      <span class="w-2 h-2 rounded-full bg-white pulse-dot"></span>
+      <span class="text-slate-300 font-medium" data-i18n-html="announcement.text">Próximo Treino Aberto em <strong>Braga, Portugal</strong></span>
+      <span class="text-slate-500">•</span>
+      <span class="text-white font-semibold" data-i18n="announcement.freeBadge">100% Gratuito & Aberto a Todos os Ritmos</span>
+      <a href="#comunidade" class="underline ml-2 text-white hover:text-neutral-300 transition-colors" data-i18n-html="announcement.joinLink">Junta-te aqui &rarr;</a>
+    </span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-40 bg-[#0A0B0E]/85 backdrop-blur-md border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center font-black text-xl shadow-[0_0_20px_rgba(255,255,255,0.25)] group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-bolt-lightning"></i>
+        </div>
+        <div>
+          <span class="font-display font-black text-2xl tracking-tighter text-white uppercase block leading-none">
+            NEXT<span class="text-neutral-400">RUN</span>
+          </span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-400 block mt-0.5">
+            CLUB • BRAGA
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#sobre" class="hover:text-white transition-colors" data-i18n="nav.club">O Clube</a>
+        <a href="#como-funciona" class="hover:text-white transition-colors" data-i18n="nav.howItWorks">Como Funciona</a>
+        <a href="#pacers" class="hover:text-white transition-colors" data-i18n="nav.pacers">Pacers & Mentores</a>
+        <a href="#calculador" class="hover:text-white transition-colors" data-i18n="nav.calculator">Squad & Pace</a>
+        <a href="#galeria" class="hover:text-white transition-colors" data-i18n="nav.gallery">Galeria</a>
+        <a href="#parceiros" class="hover:text-white transition-colors" data-i18n="nav.partners">Parceiros</a>
+        <a href="#faq" class="hover:text-white transition-colors" data-i18n="nav.faq">Dúvidas</a>
+      </div>
+
+      <!-- Right Header Actions (Direct Flags + Social/VIP + Mobile Menu) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Language Selector Bar (Direct 1-Click) -->
+        <div id="headerLangBar" class="flex items-center gap-1 p-1 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm" role="group" aria-label="Seletor de Idioma">
+          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-extrabold transition-all bg-white text-black border border-white opacity-100 shadow-sm" data-lang="en" title="English" aria-pressed="true">
+            <span class="text-sm leading-none">🇬🇧</span>
+            <span class="text-[11px] tracking-wider uppercase">EN</span>
+          </button>
+          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="pt-PT" title="Português (Portugal)" aria-pressed="false">
+            <span class="text-sm leading-none">🇵🇹</span>
+            <span class="text-[11px] tracking-wider uppercase">PT</span>
+          </button>
+          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="pt-BR" title="Português (Brasil)" aria-pressed="false">
+            <span class="text-sm leading-none">🇧🇷</span>
+            <span class="text-[11px] tracking-wider uppercase">BR</span>
+          </button>
+          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="es" title="Español" aria-pressed="false">
+            <span class="text-sm leading-none">🇪🇸</span>
+            <span class="text-[11px] tracking-wider uppercase">ES</span>
+          </button>
+          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="fr" title="Français" aria-pressed="false">
+            <span class="text-sm leading-none">🇫🇷</span>
+            <span class="text-[11px] tracking-wider uppercase">FR</span>
+          </button>
+          <button type="button" class="lang-btn flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all bg-transparent text-slate-300 border border-transparent opacity-60 hover:opacity-100 hover:text-white hover:bg-white/5" data-lang="it" title="Italiano" aria-pressed="false">
+            <span class="text-sm leading-none">🇮🇹</span>
+            <span class="text-[11px] tracking-wider uppercase">IT</span>
+          </button>
+        </div>
+
+        <!-- Desktop Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/40 transition-all" title="Instagram Next Run">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+          <a href="#comunidade" class="shimmer-btn px-4 py-2.5 rounded-xl text-black font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span data-i18n="nav.vipButton">Comunidade VIP</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-200 hover:text-white transition-colors shrink-0" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars text-lg sm:text-xl"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Dropdown Nav -->
+  <div id="mobileNav" class="fixed inset-0 z-50 bg-[#0A0B0E]/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-200 flex flex-col p-6 overflow-y-auto">
+    <div class="flex items-center justify-between pb-6 border-b border-white/10">
+      <div class="flex items-center gap-2 font-display font-black text-xl text-white">
+        <span class="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center text-sm font-black">
+          <i class="fa-solid fa-bolt-lightning"></i>
+        </span>
+        NEXT RUN CLUB
+      </div>
+      <button id="mobileNavClose" class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white" aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Language Selector Grid -->
+    <div class="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10">
+      <div class="text-xs uppercase font-bold text-slate-400 mb-3 flex items-center gap-2" data-i18n="nav.langSelectLabel">
+        <i class="fa-solid fa-globe text-white"></i>
+        <span>Idioma / Language</span>
+      </div>
+      <div class="grid grid-cols-6 gap-1.5 sm:gap-2">
+        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white text-black font-black border border-white" data-lang="en" aria-pressed="true">
+          <span class="text-base">🇬🇧</span>
+          <span>EN</span>
+        </button>
+        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="pt-PT" aria-pressed="false">
+          <span class="text-base">🇵🇹</span>
+          <span>PT</span>
+        </button>
+        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="pt-BR" aria-pressed="false">
+          <span class="text-base">🇧🇷</span>
+          <span>BR</span>
+        </button>
+        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="es" aria-pressed="false">
+          <span class="text-base">🇪🇸</span>
+          <span>ES</span>
+        </button>
+        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="fr" aria-pressed="false">
+          <span class="text-base">🇫🇷</span>
+          <span>FR</span>
+        </button>
+        <button type="button" class="mobile-lang-btn py-2 px-1 rounded-xl text-xs flex flex-col items-center justify-center gap-1 transition-all bg-white/5 text-slate-300 border border-white/10" data-lang="it" aria-pressed="false">
+          <span class="text-base">🇮🇹</span>
+          <span>IT</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-5 text-lg font-semibold text-slate-200 mt-6">
+      <a href="#sobre" class="mobile-link hover:text-white" data-i18n="nav.club">O Clube</a>
+      <a href="#como-funciona" class="mobile-link hover:text-white" data-i18n="nav.howItWorks">Como Funciona</a>
+      <a href="#pacers" class="mobile-link hover:text-white" data-i18n="nav.pacers">Pacers & Mentores</a>
+      <a href="#calculador" class="mobile-link hover:text-white" data-i18n="nav.calculator">Squad & Pace</a>
+      <a href="#galeria" class="mobile-link hover:text-white" data-i18n="nav.gallery">Galeria Oficial</a>
+      <a href="#parceiros" class="mobile-link hover:text-white" data-i18n="nav.partners">Parceiros & Apoio</a>
+      <a href="#faq" class="mobile-link hover:text-white" data-i18n="nav.faq">Perguntas Frequentes</a>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-white/10 flex flex-col gap-3">
+      <a href="#comunidade" class="mobile-link shimmer-btn py-3 rounded-xl text-black font-bold text-center flex items-center justify-center gap-2">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span data-i18n="nav.mobileJoin">Entrar no Grupo WhatsApp</span>
+      </a>
+      <a href="https://instagram.com" target="_blank" class="py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-center flex items-center justify-center gap-2">
+        <i class="fa-brands fa-instagram text-lg text-white"></i>
+        <span data-i18n="nav.mobileInstagram">Seguir no Instagram</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+    <!-- Ambient Background Lighting -->
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-white/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 -right-40 w-[450px] h-[450px] bg-white/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="lg:col-span-7 space-y-8">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs md:text-sm text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-white pulse-dot"></span>
+            <span class="font-medium" data-i18n-html="hero.badgeText">Comunidade de Corrida Urbana em <strong>Braga</strong></span>
+            <span class="text-slate-500">|</span>
+            <span class="text-white font-semibold" data-i18n="hero.badgeFree">100% Gratuito</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05] uppercase text-white">
+            <span data-i18n="hero.titleMain">NÃO É SÓ CORRER.</span> <br>
+            <span class="text-white text-glow" data-i18n="hero.titleHighlight">É PERTENCER.</span>
+          </h1>
+
+          <!-- Text from Next Run.txt -->
+          <p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl" data-i18n-html="hero.desc">
+            A <strong>Next Run</strong> é muito mais do que um grupo de corrida. Somos uma comunidade que incentiva as pessoas a saírem da sua zona de conforto, adotarem hábitos mais saudáveis e descobrirem o prazer de correr em conjunto.
+          </p>
+
+          <!-- Key Highlights Checklist -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+            <div class="flex items-center gap-2.5 text-sm text-slate-200">
+              <i class="fa-solid fa-circle-check text-white"></i>
+              <span data-i18n="hero.highlights.paces">Todos os Ritmos</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-200">
+              <i class="fa-solid fa-circle-check text-white"></i>
+              <span data-i18n="hero.highlights.pacers">Pacers Dedicados</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-200">
+              <i class="fa-solid fa-circle-check text-white"></i>
+              <span data-i18n="hero.highlights.postRun">Pós-Treino Social</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-200">
+              <i class="fa-solid fa-circle-check text-white"></i>
+              <span data-i18n="hero.highlights.noFee">Sem Mensalidade</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-200">
+              <i class="fa-solid fa-circle-check text-white"></i>
+              <span data-i18n="hero.highlights.petFriendly">Pet & Amigos Friendly</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-200">
+              <i class="fa-solid fa-circle-check text-white"></i>
+              <span data-i18n="hero.highlights.energy">Energia & Amizades</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <a href="#comunidade" class="shimmer-btn px-8 py-4 rounded-xl text-black font-extrabold text-base flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-all">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span data-i18n="hero.ctaWhatsapp">Entrar no Grupo WhatsApp</span>
+            </a>
+            <a href="#como-funciona" class="px-7 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 text-white font-bold text-base flex items-center justify-center gap-2 transition-all">
+              <span data-i18n="hero.ctaHowItWorks">Como Funciona o Treino</span>
+              <i class="fa-solid fa-arrow-right text-xs text-white"></i>
+            </a>
+          </div>
+
+          <!-- Social Proof Stats -->
+          <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-6">
+            <div>
+              <div class="font-display font-black text-3xl sm:text-4xl text-white" data-i18n="hero.stats.runners">+500</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold" data-i18n="hero.stats.runnersLabel">Corredores Conectados</div>
+            </div>
+            <div>
+              <div class="font-display font-black text-3xl sm:text-4xl text-white" data-i18n="hero.stats.cost">0€</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold" data-i18n="hero.stats.costLabel">Custo de Participação</div>
+            </div>
+            <div>
+              <div class="font-display font-black text-3xl sm:text-4xl text-white" data-i18n="hero.stats.welcome">100%</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold" data-i18n="hero.stats.welcomeLabel">Acolhimento Real</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          <!-- Main Hero Image Frame -->
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Glow undercard -->
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-white to-neutral-400 opacity-15 blur-xl"></div>
+            
+            <div class="relative rounded-3xl overflow-hidden border border-white/15 bg-[#12141A] shadow-2xl">
+              <img src="assets/img/pacers-running-street.jpg" alt="Next Run Club Braga corredores" class="w-full h-[480px] object-cover object-center">
+              
+              <!-- Overlay Gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0B0E] via-transparent to-transparent opacity-80"></div>
+              
+              <!-- Floating Badge Bottom -->
+              <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl glass-panel border border-white/10 flex items-center justify-between">
+                <div>
+                  <div class="text-xs text-neutral-400 font-bold tracking-wider uppercase" data-i18n="hero.floating.cardPacerSub">Next Run Braga</div>
+                  <div class="text-sm font-bold text-white" data-i18n="hero.floating.cardPacerTitle">"Hi! Can I help you ??"</div>
+                  <div class="text-xs text-slate-400 mt-0.5" data-i18n="hero.floating.cardPacerDesc">Pacers dedicados para todos os níveis</div>
+                </div>
+                <div class="w-11 h-11 rounded-xl bg-white text-black flex items-center justify-center font-bold text-lg shadow-md">
+                  <i class="fa-solid fa-person-running"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Top Card -->
+            <div class="absolute -top-6 -left-6 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl glass-card border border-white/15 shadow-xl">
+              <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center text-lg">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white" data-i18n="hero.floating.card1Title">Desliga a rotina</div>
+                <div class="text-[11px] text-slate-400" data-i18n="hero.floating.card1Desc">Alivia a mente e o stress</div>
+              </div>
+            </div>
+
+            <!-- Floating Right Card -->
+            <div class="absolute -bottom-6 -right-4 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl glass-card border border-white/15 shadow-xl">
+              <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center text-lg">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white" data-i18n="hero.floating.card2Title">Comunidade Ativa</div>
+                <div class="text-[11px] text-slate-400" data-i18n="hero.floating.card2Desc">Novas amizades a cada treino</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Marquee Ticker -->
+  <div class="bg-[#12141A] border-y border-white/10 py-4 overflow-hidden">
+    <div class="marquee-container">
+      <div class="marquee-content font-display font-black text-xl md:text-2xl uppercase tracking-wider text-slate-400">
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text1">NEXT RUN CLUB BRAGA</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text2">SAI DA ZONA DE CONFORTO</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text3">RUN WITH PASSION</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text4">NÃO IMPORTA O RITMO, APARECE</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text5">VILLA AÇAÍ</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text6">NEXT RUN CLUB BRAGA</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text7">RED BULL ENERGY</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text8">WHY NOT SODA</span></span>
+      </div>
+      <div class="marquee-content font-display font-black text-xl md:text-2xl uppercase tracking-wider text-slate-400" aria-hidden="true">
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text1">NEXT RUN CLUB BRAGA</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text2">SAI DA ZONA DE CONFORTO</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text3">RUN WITH PASSION</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text4">NÃO IMPORTA O RITMO, APARECE</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text5">VILLA AÇAÍ</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text6">NEXT RUN CLUB BRAGA</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text7">RED BULL ENERGY</span></span>
+        <span class="flex items-center gap-3"><span class="text-white">⚡</span> <span data-i18n="marquee.text8">WHY NOT SODA</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: O Que É a Next Run? (Manifesto) -->
+  <section id="sobre" class="py-24 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div class="text-xs uppercase tracking-widest text-neutral-300 font-bold" data-i18n="sobre.badge">O Nosso Manifesto</div>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white" data-i18n-html="sobre.title">
+          O Que é a <span class="text-white font-bold">Next Run?</span>
+        </h2>
+        <p class="text-slate-300 text-base md:text-lg leading-relaxed" data-i18n-html="sobre.quote">
+          "Acreditamos que correr é também uma forma de <strong>desligar da rotina, aliviar a mente, conhecer novas pessoas e aproveitar o momento</strong>. Não importa o teu ritmo ou a tua experiência, o importante é aparecer e fazer parte."
+        </p>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6 group-hover:bg-white group-hover:text-black transition-all">
+            <i class="fa-solid fa-person-running"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3" data-i18n="sobre.pillars.p1Title">Qualquer Ritmo, Zero Julgamentos</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="sobre.pillars.p1Desc">
+            Seja caminhando, trotando a 7:30 min/km ou acelerando a 4:30 min/km. Ninguém fica para trás. Os nossos pacers acompanham cada grupo do início ao fim.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6 group-hover:bg-white group-hover:text-black transition-all">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3" data-i18n="sobre.pillars.p2Title">Saúde Mental & Desconexão</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="sobre.pillars.p2Desc">
+            Deixa o estresse do trabalho e as telas para trás. Sentir o ar livre, a cadência dos passos e a endorfina liberta a mente e renova o teu ânimo para a semana.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6 group-hover:bg-white group-hover:text-black transition-all">
+            <i class="fa-solid fa-champagne-glasses"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3" data-i18n="sobre.pillars.p3Title">Pós-Run & Amizades Reais</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="sobre.pillars.p3Desc">
+            O treino não acaba na linha de chegada. Confraternizamos com açaí gelado, café artesanal, Red Bull e boas conversas. Constrói amizades genuínas em Braga.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6 group-hover:bg-white group-hover:text-black transition-all">
+            <i class="fa-solid fa-paw"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3" data-i18n="sobre.pillars.p4Title">Pet & Família Friendly</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="sobre.pillars.p4Desc">
+            Traz o teu cãozinho na coleira, o teu parceiro ou amigos de trabalho. A energia contagiante é aberta a todos os que querem dar o primeiro passo.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Feature Big Banner -->
+      <div class="mt-12 rounded-3xl overflow-hidden relative border border-white/10 bg-[#12141A]">
+        <div class="grid lg:grid-cols-12 items-center">
+          <div class="lg:col-span-7 p-8 sm:p-12 space-y-6">
+            <div class="inline-block px-3 py-1 rounded-md bg-white/10 text-white font-mono text-xs font-bold uppercase" data-i18n="sobre.banner.tag">
+              O Primeiro Passo
+            </div>
+            <h3 class="font-display font-black text-2xl sm:text-4xl text-white uppercase leading-tight" data-i18n="sobre.banner.title">
+              "Mais do que correr, queremos criar momentos, construir amizades e mostrar que dar o primeiro passo pode mudar a tua rotina."
+            </h3>
+            <p class="text-slate-400 text-base leading-relaxed" data-i18n="sobre.banner.desc">
+              Organizamos corridas abertas a todos, divulgadas através do nosso Instagram e mantemos a comunidade no WhatsApp para partilhar percursos, dicas e aproximar participantes.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-4">
+              <a href="#comunidade" class="shimmer-btn px-6 py-3.5 rounded-xl text-black font-bold text-sm inline-flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span data-i18n="sobre.banner.btnWhatsapp">Junta-te ao WhatsApp Oficial</span>
+              </a>
+              <a href="#galeria" class="px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 text-white font-semibold text-sm inline-flex items-center gap-2">
+                <i class="fa-solid fa-camera"></i>
+                <span data-i18n="sobre.banner.btnGallery">Ver Fotos dos Nossos Treinos</span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-5 h-80 lg:h-full relative">
+            <img src="assets/img/community-garden-smile.jpg" alt="Comunidade Next Run reunida com sorrisos" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-transparent to-[#12141A]/90 lg:to-[#12141A]"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Como Funciona o Treino -->
+  <section id="como-funciona" class="py-24 bg-[#0E1016] border-y border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div class="text-xs uppercase tracking-widest text-neutral-300 font-bold" data-i18n="comoFunciona.badge">Passo a Passo</div>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white" data-i18n-html="comoFunciona.title">
+          Como Funciona um Treino <span class="text-white font-bold">Next Run?</span>
+        </h2>
+        <p class="text-slate-400 text-base" data-i18n="comoFunciona.desc">
+          Chegaste pela primeira vez? Sem problema. Aqui está tudo o que acontece do início ao fim:
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1 -->
+        <div class="glass-card p-6 rounded-2xl relative space-y-4">
+          <div class="text-4xl font-display font-black text-white/20">01</div>
+          <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-xl">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white" data-i18n="comoFunciona.steps.s1Title">Ponto de Encontro</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="comoFunciona.steps.s1Desc">
+            Divulgado no WhatsApp & Instagram (Ex: Av. João XXI ou Parque da Ponte). Música ambiente e recepção calorosa da equipa.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card p-6 rounded-2xl relative space-y-4">
+          <div class="text-4xl font-display font-black text-white/20">02</div>
+          <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-xl">
+            <i class="fa-solid fa-person-dots-from-line"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white" data-i18n="comoFunciona.steps.s2Title">Briefing & Alongamento</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="comoFunciona.steps.s2Desc">
+            Apresentação rápida dos percursos (geralmente 3km a 6km), alongamento dinâmico coletivo e divisão dos pelotões de ritmo.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card p-6 rounded-2xl relative space-y-4">
+          <div class="text-4xl font-display font-black text-white/20">03</div>
+          <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-xl">
+            <i class="fa-solid fa-shoe-prints"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white" data-i18n="comoFunciona.steps.s3Title">A Corrida em Braga</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="comoFunciona.steps.s3Desc">
+            Corremos pelas ruas históricas e avenidas da cidade. Os pacers acompanham cada pelotão ditando o ritmo e garantindo que todos estejam seguros.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="glass-card p-6 rounded-2xl relative space-y-4">
+          <div class="text-4xl font-display font-black text-white/20">04</div>
+          <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-xl">
+            <i class="fa-solid fa-mug-hot"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white" data-i18n="comoFunciona.steps.s4Title">Pós-Run Social</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="comoFunciona.steps.s4Desc">
+            Celebração pós-treino! Copo de açaí gelado no Villa Açaí, café especial, Red Bull, conversas descontraídas e fotos da galera.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Pacers & Mentores ("Can I help you?") -->
+  <section id="pacers" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Images of Pacers in Action -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="assets/img/pacer-bruno-back.jpg" alt="Pacer Bruno Next Run Club Can I Help You" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="assets/img/park-briefing-iara.jpg" alt="Pacer Iara reunindo o grupo no parque" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+          <div class="space-y-4 pt-6">
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="assets/img/runners-sunglasses-villa.jpg" alt="Levi, Bruno e corredores Next Run Club" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="assets/img/runners-duo-nextrun.jpg" alt="Membros do Next Run Club Braga" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: The Pacer Philosophy -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase" data-i18n="pacers.badge">
+            <i class="fa-solid fa-hands-holding-circle"></i>
+            Acolhimento Ativo
+          </div>
+          
+          <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white leading-tight" data-i18n-html="pacers.title">
+            "HI! I'M LEVI & BRUNO... <br>
+            <span class="text-white font-bold">CAN I HELP YOU ??</span>"
+          </h2>
+
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed" data-i18n-html="pacers.desc">
+            Se reparares nas nossas t-shirts oficiais, todos os nossos pacers trazem essa mensagem nas costas. Isto não é por acaso: o nosso objetivo principal é <strong>garantir que ninguém se sinta intimidado</strong> ao vir treinar connosco.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+              <div class="w-9 h-9 rounded-lg bg-white text-black flex items-center justify-center font-bold shrink-0 mt-0.5">
+                <i class="fa-solid fa-compass"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-base" data-i18n="pacers.items.i1Title">Guias de Ritmo e Percurso</h4>
+                <p class="text-slate-400 text-sm mt-0.5" data-i18n="pacers.items.i1Desc">Pacers designados para cada velocidade de corrida. Sabes sempre com quem correr e por onde passar.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+              <div class="w-9 h-9 rounded-lg bg-white text-black flex items-center justify-center font-bold shrink-0 mt-0.5">
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-base" data-i18n="pacers.items.i2Title">Política Anti-Abandono</h4>
+                <p class="text-slate-400 text-sm mt-0.5" data-i18n="pacers.items.i2Desc">Cansaste a meio? O pacer desacelera contigo, caminha ao teu lado e garante que completas o treino com orgulho.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+              <div class="w-9 h-9 rounded-lg bg-white text-black flex items-center justify-center font-bold shrink-0 mt-0.5">
+                <i class="fa-solid fa-face-smile"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-base" data-i18n="pacers.items.i3Title">Boas-Vindas aos Caloiros</h4>
+                <p class="text-slate-400 text-sm mt-0.5" data-i18n="pacers.items.i3Desc">Se vieste sozinho, logo nos primeiros 2 minutos serás apresentado à malta e farás novas amizades.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Interactive Pace & Squad Matcher (Dual Panel) -->
+  <section id="calculador" class="py-24 bg-[#0E1016] border-y border-white/5 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+        <div class="text-xs uppercase tracking-widest text-neutral-300 font-bold" data-i18n="calculator.badge">Personalizador de Treino & Zonas</div>
+        <h2 class="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-white" data-i18n-html="calculator.title">
+          Descobre o Teu Squad & <span class="text-white font-bold">Calcula o Teu Pace</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base" data-i18n="calculator.desc">
+          Encontra o teu grupo ideal para a próxima corrida em Braga ou calcula com precisão as tuas zonas fisiológicas de treino.
+        </p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <button id="tabSquadBtn" type="button" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black bg-white text-black transition-all flex items-center gap-2 shadow-md">
+          <i class="fa-solid fa-users"></i>
+          <span data-i18n="calculator.tabSquad">1. Squad Matcher Next Run</span>
+        </button>
+        <button id="tabPaceBtn" type="button" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-slate-300 bg-white/5 hover:bg-white/10 transition-all flex items-center gap-2">
+          <i class="fa-solid fa-calculator"></i>
+          <span data-i18n="calculator.tabPace">2. Calculadora de Pace & Zonas (Z1 - Z5)</span>
+        </button>
+      </div>
+
+      <!-- PANEL 1: SQUAD MATCHER -->
+      <div id="panelSquad" class="glass-card p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl transition-all">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          
+          <!-- Selectors -->
+          <div class="space-y-6">
+            <div>
+              <label for="levelSelect" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="calculator.squadMatcher.labelLevel">
+                1. O teu nível de corrida atual:
+              </label>
+              <select id="levelSelect" class="w-full bg-[#1A1D27] border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:border-white transition-colors font-medium">
+                <option value="beginner" data-i18n="calculator.squadMatcher.optBeginner">Estou a começar agora / Caminhada & Trote</option>
+                <option value="cruiser" selected data-i18n="calculator.squadMatcher.optCruiser">Corro às vezes / Ritmo Social Moderado</option>
+                <option value="speed" data-i18n="calculator.squadMatcher.optSpeed">Já corro habitualmente / Ritmo Ágil e Constante</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="distanceSelect" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="calculator.squadMatcher.labelDistance">
+                2. Distância que gostarias de fazer:
+              </label>
+              <select id="distanceSelect" class="w-full bg-[#1A1D27] border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:border-white transition-colors font-medium">
+                <option value="3k" data-i18n="calculator.squadMatcher.opt3k">3 km (Iniciação & Descontração)</option>
+                <option value="5k" selected data-i18n="calculator.squadMatcher.opt5k">5 km (O clássico dos nossos treinos)</option>
+                <option value="7k" data-i18n="calculator.squadMatcher.opt7k">7 km ou mais (Desafio estendido)</option>
+              </select>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300 flex items-center gap-3">
+              <i class="fa-solid fa-info-circle text-white text-base shrink-0"></i>
+              <span data-i18n="calculator.squadMatcher.note">Não te preocupes com metas rígidas. Podes mudar de grupo a qualquer momento durante a corrida!</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Result Box -->
+          <div id="paceResultCard" class="p-6 rounded-2xl bg-[#141722] border-2 border-white/20 space-y-4 transition-all duration-300">
+            <div class="flex items-center justify-between">
+              <span id="paceBadge" class="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold">
+                Moderate Pace (6:00 - 6:45 min/km)
+              </span>
+              <span class="text-xs text-slate-400 font-mono" data-i18n="calculator.squadMatcher.squadLabel">Next Run Squad</span>
+            </div>
+
+            <h3 id="paceGroupName" class="font-display font-black text-2xl text-white">
+              Squad Social Cruiser (Comfortable Endurance)
+            </h3>
+
+            <div class="flex items-center gap-2 text-sm text-neutral-300 font-semibold">
+              <i class="fa-solid fa-user-shield"></i>
+              <span id="pacePacer">Pacer Bruno & Next Run Mentors</span>
+            </div>
+
+            <p id="paceDescription" class="text-slate-300 text-sm leading-relaxed">
+              Perfect for conversational running without running out of breath. The biggest, most lively squad in Next Run Braga!
+            </p>
+
+            <div class="pt-3 border-t border-white/10">
+              <a href="#comunidade" class="shimmer-btn w-full py-3 rounded-xl text-black font-extrabold text-sm flex items-center justify-center gap-2">
+                <span data-i18n="calculator.squadMatcher.btnJoin">Confirmar e Entrar no WhatsApp</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PANEL 2: PACE & PHYSIOLOGICAL ZONES CALCULATOR -->
+      <div id="panelPace" class="hidden glass-card p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl transition-all">
+        
+        <!-- Inputs Grid -->
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          
+          <div class="lg:col-span-5 space-y-5">
+            <div>
+              <label for="calcDistPreset" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="calculator.paceCalc.labelDist">
+                Distância Alvo:
+              </label>
+              <select id="calcDistPreset" class="w-full bg-[#1A1D27] border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-white transition-colors font-medium">
+                <option value="3" data-i18n="calculator.paceCalc.opt3k">3 km (Next Run Short Loop)</option>
+                <option value="5" selected data-i18n="calculator.paceCalc.opt5k">5 km (Next Run Official Loop)</option>
+                <option value="7" data-i18n="calculator.paceCalc.opt7k">7 km (Braga Extended Course)</option>
+                <option value="10" data-i18n="calculator.paceCalc.opt10k">10 km (Road Challenge)</option>
+                <option value="21.0975" data-i18n="calculator.paceCalc.optHalf">21.1 km (Half Marathon)</option>
+                <option value="42.195" data-i18n="calculator.paceCalc.optFull">42.2 km (Marathon)</option>
+                <option value="custom" data-i18n="calculator.paceCalc.optCustom">Custom Distance (km)</option>
+              </select>
+              <input id="calcCustomDist" type="number" step="0.1" min="0.5" max="100" placeholder="Ex: 8.5" class="hidden mt-2 w-full bg-[#1A1D27] border border-white/10 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:border-white text-sm">
+            </div>
+
+            <!-- Time Inputs (Hours, Mins, Secs) -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="calculator.paceCalc.labelTime">Target Time (HH : MM : SS):</label>
+              <div class="grid grid-cols-3 gap-2">
+                <div>
+                  <span class="text-[10px] text-slate-400 block mb-1" data-i18n="calculator.paceCalc.labelHours">Horas:</span>
+                  <input id="calcHours" type="number" min="0" max="23" value="0" class="w-full bg-[#1A1D27] border border-white/10 text-white rounded-xl px-3 py-2.5 text-center font-bold focus:outline-none focus:border-white">
+                </div>
+                <div>
+                  <span class="text-[10px] text-slate-400 block mb-1" data-i18n="calculator.paceCalc.labelMins">Minutos:</span>
+                  <input id="calcMins" type="number" min="0" max="59" value="28" class="w-full bg-[#1A1D27] border border-white/10 text-white rounded-xl px-3 py-2.5 text-center font-bold focus:outline-none focus:border-white">
+                </div>
+                <div>
+                  <span class="text-[10px] text-slate-400 block mb-1" data-i18n="calculator.paceCalc.labelSecs">Segundos:</span>
+                  <input id="calcSecs" type="number" min="0" max="59" value="30" class="w-full bg-[#1A1D27] border border-white/10 text-white rounded-xl px-3 py-2.5 text-center font-bold focus:outline-none focus:border-white">
+                </div>
+              </div>
+            </div>
+
+            <button id="btnCalculatePace" type="button" class="w-full shimmer-btn py-3.5 rounded-xl text-black font-extrabold text-sm flex items-center justify-center gap-2">
+              <i class="fa-solid fa-gauge-high"></i>
+              <span data-i18n="calculator.paceCalc.btnCalc">Calcular Pace & Zonas de Treino</span>
+            </button>
+
+            <!-- Resumo Rápido -->
+            <div class="p-4 rounded-2xl bg-[#141722] border border-white/20 flex items-center justify-around text-center">
+              <div>
+                <div class="text-[11px] uppercase font-bold text-slate-400" data-i18n="calculator.paceCalc.resultSummaryTitle">O Teu Ritmo Médio:</div>
+                <div id="paceAvgResult" class="font-display font-black text-2xl text-white mt-0.5">5:42 min/km</div>
+              </div>
+              <div class="h-8 w-px bg-white/10"></div>
+              <div>
+                <div class="text-[11px] uppercase font-bold text-slate-400" data-i18n="calculator.paceCalc.speedLabel">Velocidade Estimada:</div>
+                <div id="speedAvgResult" class="font-display font-black text-2xl text-white mt-0.5">10.5 km/h</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Zones Grid Display -->
+          <div class="lg:col-span-7 space-y-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2 mb-2" data-i18n="calculator.paceCalc.zonesTitle">
+              <i class="fa-solid fa-heart-pulse text-white"></i>
+              <span>Zonas de Treino Fisiológicas:</span>
+            </div>
+
+            <!-- Z1 -->
+            <div class="p-3.5 rounded-xl bg-white/5 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-white/30 transition-colors">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-neutral-500"></span>
+                  <span class="text-xs font-bold text-white" data-i18n="calculator.paceCalc.z1Name">Z1 — Recuperação Ativa (Recovery)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5" data-i18n="calculator.paceCalc.z1Desc">Corrida muito leve, respiração sem esforço. Regeneração muscular pós-esforço e circulação ativa.</p>
+              </div>
+              <div id="z1Pace" class="font-mono font-bold text-sm text-neutral-300 shrink-0 sm:text-right">7:07 - 7:37 min/km</div>
+            </div>
+
+            <!-- Z2 -->
+            <div class="p-3.5 rounded-xl bg-white/5 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-white/30 transition-colors">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-neutral-400"></span>
+                  <span class="text-xs font-bold text-white" data-i18n="calculator.paceCalc.z2Name">Z2 — Base Aeróbica (Endurance Confortável)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5" data-i18n="calculator.paceCalc.z2Desc">Ritmo de conversa sem perder o fôlego. Onde passas a maior parte dos treinos para queimar gordura e aumentar capilarização.</p>
+              </div>
+              <div id="z2Pace" class="font-mono font-bold text-sm text-neutral-200 shrink-0 sm:text-right">6:27 - 6:57 min/km</div>
+            </div>
+
+            <!-- Z3 -->
+            <div class="p-3.5 rounded-xl bg-white/5 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-white/30 transition-colors">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-neutral-300"></span>
+                  <span class="text-xs font-bold text-white" data-i18n="calculator.paceCalc.z3Name">Z3 — Ritmo Maratona (Tempo Aeróbico)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5" data-i18n="calculator.paceCalc.z3Desc">Exige foco sustentado. Ideal para treinos de ritmo longo e corridas contínuas em pelotão.</p>
+              </div>
+              <div id="z3Pace" class="font-mono font-bold text-sm text-white shrink-0 sm:text-right">5:57 - 6:17 min/km</div>
+            </div>
+
+            <!-- Z4 -->
+            <div class="p-3.5 rounded-xl bg-white/5 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-white/30 transition-colors">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
+                  <span class="text-xs font-bold text-white" data-i18n="calculator.paceCalc.z4Name">Z4 — Limiar de Lactato (Threshold / Ritmo 10K)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5" data-i18n="calculator.paceCalc.z4Desc">Ritmo duro e desconfortável, mas controlável. Melhora a capacidade de suportar e reciclar ácido lático.</p>
+              </div>
+              <div id="z4Pace" class="font-mono font-bold text-sm text-white shrink-0 sm:text-right">5:32 - 5:52 min/km</div>
+            </div>
+
+            <!-- Z5 -->
+            <div class="p-3.5 rounded-xl bg-white/5 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-white/30 transition-colors">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]"></span>
+                  <span class="text-xs font-bold text-white" data-i18n="calculator.paceCalc.z5Name">Z5 — VO2 Máximo & Potência (Intervalados / HIIT)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5" data-i18n="calculator.paceCalc.z5Desc">Esforço máximo para séries de velocidade (tiros curtos). Aumenta a velocidade de topo e a capacidade pulmonar.</p>
+              </div>
+              <div id="z5Pace" class="font-mono font-bold text-sm text-white shrink-0 sm:text-right">4:57 - 5:12 min/km</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Galeria Oficial de Fotos (24 Fotos Totais) -->
+  <section id="galeria" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="space-y-3">
+          <div class="text-xs uppercase tracking-widest text-neutral-300 font-bold" data-i18n="gallery.badge">Galeria Viva</div>
+          <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white" data-i18n-html="gallery.title">
+            Momentos da <span class="text-white font-bold">Comunidade</span>
+          </h2>
+          <p class="text-slate-400 text-base max-w-xl" data-i18n="gallery.desc">
+            Registos 100% reais dos nossos encontros pelas ruas, praças e cafés de Braga. Clica para ampliar em alta definição.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="flex flex-wrap gap-2">
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-black transition-all" data-filter="all" data-i18n="gallery.filters.all">
+            Todas as Fotos
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 bg-white/5 hover:bg-white/10 transition-all" data-filter="corrida" data-i18n="gallery.filters.run">
+            Corridas em Braga
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 bg-white/5 hover:bg-white/10 transition-all" data-filter="social" data-i18n="gallery.filters.social">
+            Pós-Run & Amigos
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 bg-white/5 hover:bg-white/10 transition-all" data-filter="pacers" data-i18n="gallery.filters.pacers">
+            Equipa & Pacers
+          </button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid: 24 Fotos Reais -->
+      <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        
+        <!-- 1 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social comunidade">
+          <img src="assets/img/community-courtyard.jpg" alt="Comunidade Next Run no pátio" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.1.title">Comunidade Unida</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.1.tag">Braga, Portugal</span>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida pacers">
+          <img src="assets/img/pacers-running-street.jpg" alt="Pacers nas ruas de Braga" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.2.title">Pacers em Ação</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.2.tag">Can I help you ??</span>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida">
+          <img src="assets/img/braga-run.jpg" alt="Braga Run" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.3.title">Braga Run</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.3.tag">Centro Histórico</span>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida">
+          <img src="assets/img/braga-avenida-group.jpg" alt="Avenida João XXI grupo" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.4.title">Av. João XXI</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.4.tag">Pelotão em Movimento</span>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/postrun-redbull-team.jpg" alt="Equipa Red Bull Next Run" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.5.title">Red Bull Energy</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.5.tag">Pós-Treino Oficial</span>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/postrun-acai-cheers.jpg" alt="Villa Açaí com corredores" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.6.title">Villa Açaí</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.6.tag">O Fruto do Brasil</span>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="pacers">
+          <img src="assets/img/pacer-bruno-back.jpg" alt="Pacer Bruno Next Run Braga" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.7.title">Hi, I'm Bruno!</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.7.tag">Mentor & Pacer</span>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/pet-friendly-dog.jpg" alt="Cachorro corredor Pet Friendly" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.8.title">Pet Friendly</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.8.tag">O Nosso 4 Patas Mais Rápido</span>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida">
+          <img src="assets/img/warmup-stairs-stretch.jpg" alt="Alongamento na escadaria" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.9.title">Alongamento Coletivo</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.9.tag">Aquecimento Inicial</span>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/runners-cafe-laugh.jpg" alt="Risadas pós-corrida" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.10.title">Bons Momentos</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.10.tag">Conexão e Risadas</span>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/postrun-craft-soda.jpg" alt="Why Not Soda Artesanal" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.11.title">Why Not Soda</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.11.tag">Craft & Organic</span>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="pacers">
+          <img src="assets/img/park-briefing-iara.jpg" alt="Pacer Iara Next Run" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.12.title">Hi, I'm Iara!</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.12.tag">Briefing no Parque</span>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida social">
+          <img src="assets/img/runners-street-highfive.jpg" alt="Energia e high-five entre corredores em Braga" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.13.title">Energia & High-Five</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.13.tag">Apoio Mútuo em Braga</span>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida">
+          <img src="assets/img/runners-urban-stride.jpg" alt="Passada urbana pelas avenidas de Braga" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.14.title">Passada Urbana</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.14.tag">Ritmo no Asfalto</span>
+          </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida pacers">
+          <img src="assets/img/warmup-stretch-park.jpg" alt="Aquecimento e briefing no parque" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.15.title">Aquecimento no Parque</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.15.tag">Briefing & Mobilidade</span>
+          </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/postrun-redbull-chat.jpg" alt="Bate-papo descontraído com Red Bull" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.16.title">Resenha Pós-Treino</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.16.tag">Red Bull & Conversas</span>
+          </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/postrun-coffee-toast.jpg" alt="Pequeno-almoço e convívio pós-corrida" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.17.title">Pequeno-Almoço & Partilha</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.17.tag">Café & Convivência</span>
+          </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social comunidade">
+          <img src="assets/img/postrun-runners-pose.jpg" alt="Pelotão reunido no pós-treino" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.18.title">Pelotão Conectado</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.18.tag">União da Comunidade</span>
+          </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida comunidade">
+          <img src="assets/img/runners-fun-duo.jpg" alt="Sorrisos e amizade durante a corrida" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.19.title">Sorrisos no Asfalto</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.19.tag">Amizades que Inspiram</span>
+          </div>
+        </div>
+
+        <!-- 20 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social comunidade">
+          <img src="assets/img/community-courtyard-patio.jpg" alt="Pátio da comunidade Next Run Braga" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.20.title">Pátio da Comunidade</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.20.tag">Espaço de Encontro</span>
+          </div>
+        </div>
+
+        <!-- 21 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/postrun-brickwall-chat.jpg" alt="Conversas pós-treino descontraídas" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.21.title">Histórias & Conexões</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.21.tag">Pós-Corrida Descontraído</span>
+          </div>
+        </div>
+
+        <!-- 22 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social">
+          <img src="assets/img/runners-sunglasses-villa.jpg" alt="Estilo e boa disposição na Next Run" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.22.title">Estilo & Energia</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.22.tag">Villa Açaí Crew</span>
+          </div>
+        </div>
+
+        <!-- 23 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="corrida pacers">
+          <img src="assets/img/runners-duo-nextrun.jpg" alt="Corredores em sintonia no treino" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.23.title">Next Run Dupla</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.23.tag">Juntos a Cada Km</span>
+          </div>
+        </div>
+
+        <!-- 24 -->
+        <div class="gallery-card gallery-item cursor-pointer" data-category="social comunidade">
+          <img src="assets/img/community-garden-smile.jpg" alt="Espírito de acolhimento e alegria Next Run" class="w-full h-64 object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="gallery-title font-bold text-white text-sm" data-i18n="gallery.items.24.title">Espírito Next Run</span>
+            <span class="gallery-tag text-xs text-neutral-300" data-i18n="gallery.items.24.tag">O Prazer de Estar Presente</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Parceiros & Apoio -->
+  <section id="parceiros" class="py-20 bg-[#0E1016] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+        <div class="text-xs uppercase tracking-widest text-neutral-300 font-bold" data-i18n="partners.badge">Parcerias de Sucesso</div>
+        <h2 class="font-display font-black text-2xl sm:text-4xl uppercase tracking-tight text-white" data-i18n="partners.title">
+          Quem Corre Connosco
+        </h2>
+        <p class="text-slate-400 text-sm" data-i18n="partners.desc">
+          Marcas que apoiam o desporto, a saúde mental e o convívio em Braga:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
+        
+        <!-- Partner 1 -->
+        <div class="glass-card p-6 rounded-2xl text-center group border border-white/5 hover:border-white/30">
+          <div class="text-3xl text-white mb-2 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div class="font-display font-black text-lg text-white">VILLA AÇAÍ</div>
+          <div class="text-xs text-slate-400" data-i18n="partners.p1Subtitle">O Fruto do Brasil • Braga</div>
+        </div>
+
+        <!-- Partner 2 -->
+        <div class="glass-card p-6 rounded-2xl text-center group border border-white/5 hover:border-white/30">
+          <div class="text-3xl text-white mb-2 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-mug-hot"></i>
+          </div>
+          <div class="font-display font-black text-lg text-white">NEXT RUN COMMUNITY</div>
+          <div class="text-xs text-slate-400" data-i18n="partners.p2Subtitle">Comunidade & Ponto de Encontro</div>
+        </div>
+
+        <!-- Partner 3 -->
+        <div class="glass-card p-6 rounded-2xl text-center group border border-white/5 hover:border-white/30">
+          <div class="text-3xl text-white mb-2 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="font-display font-black text-lg text-white">RED BULL</div>
+          <div class="text-xs text-slate-400" data-i18n="partners.p3Subtitle">Te Dá Asas • Hidratação</div>
+        </div>
+
+        <!-- Partner 4 -->
+        <div class="glass-card p-6 rounded-2xl text-center group border border-white/5 hover:border-white/30">
+          <div class="text-3xl text-white mb-2 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-bottle-droplet"></i>
+          </div>
+          <div class="font-display font-black text-lg text-white">WHY NOT SODA</div>
+          <div class="text-xs text-slate-400" data-i18n="partners.p4Subtitle">Organic Craft Soda</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Dúvidas Frequentes (FAQ) -->
+  <section id="faq" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-3 mb-16">
+        <div class="text-xs uppercase tracking-widest text-neutral-300 font-bold" data-i18n="faq.badge">F.A.Q.</div>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white" data-i18n="faq.title">
+          Tudo o que Precisas de Saber
+        </h2>
+        <p class="text-slate-400 text-base" data-i18n="faq.desc">Tens dúvidas antes do teu primeiro treino? Aqui estão as respostas:</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item glass-card rounded-2xl overflow-hidden border border-white/10">
+          <button class="faq-trigger w-full p-6 text-left flex items-center justify-between text-white font-bold text-lg hover:text-white transition-colors">
+            <span data-i18n="faq.q1">Quanto custa participar na Next Run?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-sm text-neutral-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a1">
+            Zero euros! A Next Run é uma comunidade 100% aberta e gratuita. Não há joia de inscrição, mensalidade ou cobranças. Basta apareceres com vontade de correr e conhecer pessoas novas.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass-card rounded-2xl overflow-hidden border border-white/10">
+          <button class="faq-trigger w-full p-6 text-left flex items-center justify-between text-white font-bold text-lg hover:text-white transition-colors">
+            <span data-i18n="faq.q2">Nunca corri na vida. Posso aparecer?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-sm text-neutral-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a2">
+            Com certeza! A nossa missão é incentivar pessoas a darem o primeiro passo. Temos pelotão de caminhada e trote leve com pacers dedicados que não te deixam para trás.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass-card rounded-2xl overflow-hidden border border-white/10">
+          <button class="faq-trigger w-full p-6 text-left flex items-center justify-between text-white font-bold text-lg hover:text-white transition-colors">
+            <span data-i18n="faq.q3">Onde e quando são divulgados os treinos?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-sm text-neutral-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a3">
+            Os pontos de encontro, horários e rotas da semana são divulgados sempre no nosso grupo oficial do WhatsApp e stories do Instagram. Entra no grupo para não perderes nenhum detalhe!
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass-card rounded-2xl overflow-hidden border border-white/10">
+          <button class="faq-trigger w-full p-6 text-left flex items-center justify-between text-white font-bold text-lg hover:text-white transition-colors">
+            <span data-i18n="faq.q4">Posso levar o meu cãozinho para correr?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-sm text-neutral-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a4">
+            Sim! Somos uma comunidade totalmente pet-friendly. Muitos dos nossos membros trazem os seus patudos com trela e coleira adequada.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item glass-card rounded-2xl overflow-hidden border border-white/10">
+          <button class="faq-trigger w-full p-6 text-left flex items-center justify-between text-white font-bold text-lg hover:text-white transition-colors">
+            <span data-i18n="faq.q5">O que devo levar no meu primeiro dia?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-sm text-neutral-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-4" data-i18n="faq.a5">
+            Apenas roupa desportiva confortável, sapatilhas de corrida, uma garrafa de água e um sorriso no rosto. Todo o acolhimento fica por nossa conta.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Call To Action (Entrar no WhatsApp & Instagram) -->
+  <section id="comunidade" class="py-24 relative overflow-hidden bg-gradient-to-b from-[#0A0B0E] via-[#121622] to-[#0A0B0E]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <div class="w-20 h-20 mx-auto rounded-3xl bg-white text-black flex items-center justify-center text-4xl shadow-[0_0_50px_rgba(255,255,255,0.25)] mb-8">
+        <i class="fa-solid fa-person-running"></i>
+      </div>
+
+      <h2 class="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white mb-6" data-i18n-html="cta.title">
+        O Teu Primeiro Passo <br>
+        Começa <span class="text-white font-bold">Agora.</span>
+      </h2>
+
+      <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="cta.desc">
+        Não adies para a próxima semana. Entra no grupo do WhatsApp da Next Run Braga, vê quando é a próxima corrida e aparece. Estamos à tua espera!
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://chat.whatsapp.com/EYIBWMcSSb27j7nGZfToOV" target="_blank" rel="noopener noreferrer" class="shimmer-btn w-full sm:w-auto px-9 py-5 rounded-2xl text-black font-black text-lg flex items-center justify-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.25)] hover:scale-105 transition-all">
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+          <span data-i18n="cta.btnWhatsapp">Entrar no Grupo WhatsApp</span>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-9 py-5 rounded-2xl bg-white/5 border border-white/15 hover:border-white/30 text-white font-bold text-lg flex items-center justify-center gap-3 hover:bg-white/10 transition-all">
+          <i class="fa-brands fa-instagram text-2xl text-white"></i>
+          <span data-i18n="cta.btnInstagram">Seguir no Instagram</span>
+        </a>
+      </div>
+
+      <div class="mt-8 text-xs text-slate-500 flex items-center justify-center gap-4">
+        <span data-i18n="cta.badges.city">📍 Braga, Portugal</span>
+        <span>•</span>
+        <span data-i18n="cta.badges.runs">⚡ Encontros Semanais</span>
+        <span>•</span>
+        <span data-i18n="cta.badges.community">🤝 100% Comunitário</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 bg-[#08090C] py-12 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Logo & City -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-black">
+          <i class="fa-solid fa-bolt-lightning text-sm"></i>
+        </div>
+        <div>
+          <span class="font-display font-black text-white uppercase text-base">NEXT RUN CLUB</span>
+          <span class="text-xs text-slate-500 block" data-i18n-html="footer.tagline">Braga, Portugal &bull; Run with passion</span>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+        <a href="#sobre" class="hover:text-white transition-colors" data-i18n="footer.links.club">O Clube</a>
+        <a href="#como-funciona" class="hover:text-white transition-colors" data-i18n="footer.links.how">Como Funciona</a>
+        <a href="#pacers" class="hover:text-white transition-colors" data-i18n="footer.links.pacers">Pacers</a>
+        <a href="#galeria" class="hover:text-white transition-colors" data-i18n="footer.links.gallery">Galeria</a>
+        <a href="#parceiros" class="hover:text-white transition-colors" data-i18n="footer.links.partners">Parceiros</a>
+        <a href="#faq" class="hover:text-white transition-colors" data-i18n="footer.links.faq">FAQ</a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-xs text-slate-500 text-center md:text-right" data-i18n-html="footer.copyright">
+        &copy; 2026 Next Run Club. Todos os direitos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md items-center justify-center p-4 sm:p-8">
+    <button id="lightboxClose" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center text-xl transition-colors z-20" aria-label="Fechar">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button id="lightboxPrev" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center text-xl transition-colors z-20" aria-label="Anterior">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="lightboxNext" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center text-xl transition-colors z-20" aria-label="Próximo">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="max-w-5xl max-h-[85vh] flex flex-col items-center">
+      <img id="lightboxImg" src="" alt="" class="max-h-[75vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl border border-white/10">
+      <div id="lightboxCaption" class="mt-4 text-center text-sm font-medium"></div>
+    </div>
+  </div>
+
+  <!-- Scripts: i18n Dictionary first, then App logic -->
+  <script src="assets/js/i18n.js?v=5.1.0"></script>
+  <script src="assets/js/app.js?v=5.1.0"></script>
+</body>
+</html>
